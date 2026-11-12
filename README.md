@@ -1,5 +1,7 @@
 # OI-Core
 
+**This Project is empty now.**
+
 A high-performance, fully offline local evaluation engine for competitive programming (OI/ICPC). 
 
 ## 🚀 Vision
