@@ -79,7 +79,7 @@
 		"compile_cmd": "",
 		"run_flags": "",
 		"run_cmd": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source}\" {run_flags}",
-		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source} {run_flags} < {input_file} > {output_file}\""
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source}\" {run_flags} < \"{input_file}\" > \"{output_file}\""
 	},
 	"sh":
 	{
@@ -108,8 +108,8 @@
 		"compile_cmd": "",
 		"compile_sh" : "",
 		"run_flags": "",
-		"run_cmd": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\"",
-		"run_sh" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\"",
+		"run_cmd": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\" {run_flags}",
+		"run_sh" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\" {run_flags}",
 		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\" {run_flags} < \"{input_file}\" > \"{output_file}\"",
 		"run_sh_with_input" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\" {run_flags} < \"{input_file}\" > \"{output_file}\""
 	}
