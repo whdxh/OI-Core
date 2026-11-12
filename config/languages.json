@@ -6,12 +6,12 @@
 		"compiler": "g++",
 		"compiler_path": "",
 		"compile_flags": ["-std=c++14", "-static"],
-		"compile_cmd": "{compiler_path}{compiler}.exe {source_path}\\{source} -o {target_path}\\{target} -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
-		"compile_sh" : "{compiler_path}{compiler} {source_path}/{source} -o {target_path}/{target} -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
-		"run_cmd": "{target_path}\\{target}",
-		"run_sh" : "{target_path}/{target}",
-		"run_cmd_with_input": "{target_path}\\{target} < {input_file} > {output_file}",
-		"run_sh_with_input" : "{target_path}/{target} < {input_file} > {output_file}"
+		"compile_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" -o \"{target_path}\\{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
+		"compile_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" -o \"{target_path}/{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
+		"run_cmd": "\"{target_path}\\{target}\"",
+		"run_sh" : "\"{target_path}/{target}\"",
+		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\"",
+		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\""
 	},
 	"c":
 	{
@@ -20,12 +20,12 @@
 		"compiler": "gcc",
 		"compiler_path": "",
 		"compile_flags": ["-std=c11", "-static"],
-		"compile_cmd": "{compiler_path}{compiler}.exe {source_path}\\{source} -o {target_path}\\{target} -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
-		"compile_sh" : "{compiler_path}{compiler} {source_path}/{source} -o {target_path}/{target} -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
-		"run_cmd": "{target_path}\\{target}",
-		"run_sh" : "{target_path}/{target}",
-		"run_cmd_with_input": "{target_path}\\{target} < {input_file} > {output_file}",
-		"run_sh_with_input" : "{target_path}/{target} < {input_file} > {output_file}"
+		"compile_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" -o \"{target_path}\\{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
+		"compile_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" -o \"{target_path}/{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
+		"run_cmd": "\"{target_path}\\{target}\"",
+		"run_sh" : "\"{target_path}/{target}\"",
+		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\"",
+		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\""
 	},
 	"py":
 	{
@@ -33,12 +33,12 @@
 		"compiler": "python",
 		"compiler_path": "",
 		"compile_flags": [],
-		"compile_cmd": "{compiler_path}{compiler}.exe -m py_compile {source_path}\\{source}",
-		"compile_sh" : "{compiler_path}{compiler} -m py_compile {source_path}/{source}",
-		"run_cmd": "{compiler_path}{compiler}.exe {source_path}\\{source}",
-		"run_sh" : "{compiler_path}{compiler} {source_path}/{source}",
-		"run_cmd_with_input": "{compiler_path}{compiler}.exe {source_path}\\{source} < {input_file} > {output_file}",
-		"run_sh_with_input" : "{compiler_path}{compiler} {source_path}/{source} < {input_file} > {output_file}"
+		"compile_cmd": "",
+		"compile_sh" : "",
+		"run_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\"",
+		"run_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\"",
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" < \"{input_file}\" > \"{output_file}\"",
+		"run_sh_with_input" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\""
 	},
 	"pas":
 	{
@@ -47,12 +47,12 @@
 		"compiler": "fpc",
 		"compiler_path": "",
 		"compile_flags": [],
-		"compile_cmd": "{compiler_path}{compiler} {source_path}\\{source} -o{target_path}\\{target} {compile_flags}",
-		"compile_sh" : "{compiler_path}{compiler} {source_path}/{source} -o{target_path}/{target} {compile_flags}",
-		"run_cmd": "{target_path}\\{target}",
-		"run_sh" : "{target_path}/{target}",
-		"run_cmd_with_input": "{target_path}\\{target} < {input_file} > {output_file}",
-		"run_sh_with_input" : "{target_path}/{target} < {input_file} > {output_file}"
+		"compile_cmd": "\"{compiler_path}{compiler}\" \"{source_path}\\{source}\" -o\"{target_path}\\{target}\" {compile_flags}",
+		"compile_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" -o\"{target_path}/{target}\" {compile_flags}",
+		"run_cmd": "\"{target_path}\\{target}\"",
+		"run_sh" : "\"{target_path}/{target}\"",
+		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\"",
+		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\""
 	},
 	"bat":
 	{
@@ -61,8 +61,8 @@
 		"compiler_path": "",
 		"compile_flags": [],
 		"compile_cmd": "",
-		"run_cmd": "{compiler_path}{compiler}.exe /c {source_path}\\{source}",
-		"run_cmd_with_input": "{compiler_path}{compiler}.exe /c {source_path}\\{source} < {input_file} > {output_file}"
+		"run_cmd": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source}\"",
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source} < {input_file} > {output_file}\""
 	},
 	"sh":
 	{
@@ -72,8 +72,8 @@
 		"compile_flags": [],
 		"compile_cmd": "",
 		"compile_sh" : "",
-		"run_sh" : "{compiler_path}{compiler} {source_path}/{source}",
-		"run_sh_with_input" : "{compiler_path}{compiler} {source_path}/{source} < {input_file} > {output_file}"
+		"run_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\"",
+		"run_sh_with_input" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\""
 	},
 	"ps1":
 	{
@@ -83,9 +83,9 @@
 		"compile_flags": [],
 		"compile_cmd": "",
 		"compile_sh" : "",
-		"run_cmd": "{compiler_path}{compiler}.exe -File {source_path}\\{source}",
-		"run_sh" : "{compiler_path}{compiler} -File {source_path}/{source}",
-		"run_cmd_with_input": "{compiler_path}{compiler}.exe -File {source_path}\\{source} < {input_file} > {output_file}",
-		"run_sh_with_input" : "{compiler_path}{compiler} -File {source_path}/{source} < {input_file} > {output_file}"
+		"run_cmd": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\"",
+		"run_sh" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\"",
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\" < \"{input_file}\" > \"{output_file}\"",
+		"run_sh_with_input" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\""
 	}
 }
