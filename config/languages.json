@@ -1,6 +1,8 @@
 {
 	"cpp":
 	{
+		"name": "C++",
+		"system": ["Windows", "Linux", "MacOS"],
 		"target_path": "%tmp%",
 		"source_path": ".",
 		"compiler": "g++",
@@ -8,13 +10,16 @@
 		"compile_flags": ["-std=c++14", "-static"],
 		"compile_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" -o \"{target_path}\\{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
 		"compile_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" -o \"{target_path}/{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
-		"run_cmd": "\"{target_path}\\{target}\"",
-		"run_sh" : "\"{target_path}/{target}\"",
-		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\"",
-		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\""
+		"run_flags": "",
+		"run_cmd": "\"{target_path}\\{target}\" {run_flags}",
+		"run_sh" : "\"{target_path}/{target}\" {run_flags}",
+		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\" {run_flags}",
+		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\" {run_flags}"
 	},
 	"c":
 	{
+		"name": "C",
+		"system": ["Windows", "Linux", "MacOS"],
 		"target_path": "%tmp%",
 		"source_path": ".",
 		"compiler": "gcc",
@@ -22,26 +27,33 @@
 		"compile_flags": ["-std=c11", "-static"],
 		"compile_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" -o \"{target_path}\\{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
 		"compile_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" -o \"{target_path}/{target}\" -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
-		"run_cmd": "\"{target_path}\\{target}\"",
-		"run_sh" : "\"{target_path}/{target}\"",
-		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\"",
-		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\""
+		"run_flags": "",
+		"run_cmd": "\"{target_path}\\{target}\" {run_flags}",
+		"run_sh" : "\"{target_path}/{target}\" {run_flags}",
+		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\" {run_flags}",
+		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\" {run_flags}"
 	},
 	"py":
 	{
+		"name": "Python",
+		"system": ["Windows", "Linux", "MacOS"],
+		"target_path": "",
 		"source_path": ".",
 		"compiler": "python",
 		"compiler_path": "",
 		"compile_flags": [],
 		"compile_cmd": "",
 		"compile_sh" : "",
-		"run_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\"",
-		"run_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\"",
-		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" < \"{input_file}\" > \"{output_file}\"",
-		"run_sh_with_input" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\""
+		"run_flags": "",
+		"run_cmd": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" {compile_flags}",
+		"run_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" {compile_flags}",
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" \"{source_path}\\{source}\" < \"{input_file}\" > \"{output_file}\" {run_flags}",
+		"run_sh_with_input" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\" {run_flags}"
 	},
 	"pas":
 	{
+		"name": "Pascal",
+		"system": ["Windows", "Linux", "MacOS"],
 		"target_path": "%tmp%",
 		"source_path": ".",
 		"compiler": "fpc",
@@ -49,43 +61,56 @@
 		"compile_flags": [],
 		"compile_cmd": "\"{compiler_path}{compiler}\" \"{source_path}\\{source}\" -o\"{target_path}\\{target}\" {compile_flags}",
 		"compile_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" -o\"{target_path}/{target}\" {compile_flags}",
-		"run_cmd": "\"{target_path}\\{target}\"",
-		"run_sh" : "\"{target_path}/{target}\"",
-		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\"",
-		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\""
+		"run_flags": "",
+		"run_cmd": "\"{target_path}\\{target}\" {run_flags}",
+		"run_sh" : "\"{target_path}/{target}\" {run_flags}",
+		"run_cmd_with_input": "\"{target_path}\\{target}\" < \"{input_file}\" > \"{output_file}\" {run_flags}",
+		"run_sh_with_input" : "\"{target_path}/{target}\" < \"{input_file}\" > \"{output_file}\" {run_flags}"
 	},
 	"bat":
 	{
+		"name": "Batch",
+		"system": ["Windows"],
+		"target_path": "",
 		"source_path": ".",
 		"compiler": "cmd",
 		"compiler_path": "",
 		"compile_flags": [],
 		"compile_cmd": "",
-		"run_cmd": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source}\"",
-		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source} < {input_file} > {output_file}\""
+		"run_flags": "",
+		"run_cmd": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source}\" {run_flags}",
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" /c \"{source_path}\\{source} < {input_file} > {output_file}\" {run_flags}"
 	},
 	"sh":
 	{
+		"name": "Shell",
+		"system": ["Linux", "MacOS"],
+		"target_path": "",
 		"source_path": ".",
 		"compiler": "sh",
 		"compiler_path": "",
 		"compile_flags": [],
 		"compile_cmd": "",
 		"compile_sh" : "",
-		"run_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\"",
-		"run_sh_with_input" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\""
+		"run_flags": "",
+		"run_sh" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" {run_flags}",
+		"run_sh_with_input" : "\"{compiler_path}{compiler}\" \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\" {run_flags}"
 	},
 	"ps1":
 	{
+		"name": "PowerShell",
+		"system": ["Windows"],
+		"target_path": "",
 		"source_path": ".",
 		"compiler": "powershell",
 		"compiler_path": "",
 		"compile_flags": [],
 		"compile_cmd": "",
 		"compile_sh" : "",
+		"run_flags": "",
 		"run_cmd": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\"",
 		"run_sh" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\"",
-		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\" < \"{input_file}\" > \"{output_file}\"",
-		"run_sh_with_input" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\""
+		"run_cmd_with_input": "\"{compiler_path}{compiler}.exe\" -ExecutionPolicy Bypass -File \"{source_path}\\{source}\" < \"{input_file}\" > \"{output_file}\" {run_flags}",
+		"run_sh_with_input" : "\"{compiler_path}{compiler}\" -ExecutionPolicy Bypass -File \"{source_path}/{source}\" < \"{input_file}\" > \"{output_file}\" {run_flags}"
 	}
 }
