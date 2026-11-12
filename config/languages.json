@@ -1,0 +1,13 @@
+{
+	"cpp":
+	{
+		"target_path": "%tmp%",
+		"source_path": ".",
+		"compiler_path": "",
+		"compile_flags": ["-std=c++14", "-static"],
+		"compile_cmd": "{compiler_path}g++.exe {source_path}\\{source} -o {target_path}\\{target} -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
+		"compile_sh":  "{compiler_path}g++ {source_path}/{source} -o {target_path}/{target} -Wall -Wextra -Wl,--stack=134217728 {compile_flags}",
+		"run_cmd": "{target_path}\\{target}",
+		"run_sh" : "{target_path}/{target}"
+	}
+}
