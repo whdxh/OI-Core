@@ -28,6 +28,7 @@ OI-Core/
 │   └── IJudger.hpp             # 文本比对接口
 │
 └── src/                        # 【后端具体实现】
+    ├── main.cpp                # 后端独立可执行文件入口
     ├── core/
     │   ├── BackendImpl.cpp     # 统筹编译、沙盒、比对的主逻辑
     │   ├── CompilerImpl.cpp    # 抓取并静默执行外部编译器的实现
@@ -81,6 +82,7 @@ OI-Core/
 │   └── IJudger.hpp             # Judger interface
 │
 └── src/                        # [Backend Implementations]
+    ├── main.cpp                # Backend standalone executable entry point
     ├── core/
     │   ├── BackendImpl.cpp     # Orchestrates compile, sandbox, and judge logic
     │   ├── CompilerImpl.cpp    # Captures and silently executes external compilers
