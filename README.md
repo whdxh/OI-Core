@@ -12,8 +12,8 @@ A high-performance, fully offline local evaluation engine for competitive progra
 Existing tools like Dev-C++ are outdated. We are building a modern, lightweight, and offline evaluation core engine designed to provide a seamless competitive programming experience.
 
 ## ✨ Features & Roadmap
-- [x] **Multi-language Support Config**: Driven by JSON, supports C++, Python, etc.
-- [ ] **Sandbox Execution**: Strict time and memory limits (TLE/MLE protection) using Windows Job Objects.
+- [x] **Extensible Language Support**: Implemented via pure C++ OOP (Inheritance & Polymorphism). Developers can easily extend new languages (C++, Python, Rust) by subclassing the base `Language` class, completely eliminating the need for external config parsing.
+- [ ] **Sandbox Execution**: Strict time and memory limits (TLE/MLE protection) using Windows Job Objects and Linux `setrlimit`.
 - [ ] **Smart Judger**: Ignore trailing spaces and CRLF differences (Linux/Windows compatibility).
 - [ ] **Automated Stress Testing**: Built-in generator and brute-force comparer.
 - [ ] **100% Offline**: Zero network requests, fully compliant with exam rules.
@@ -21,23 +21,25 @@ Existing tools like Dev-C++ are outdated. We are building a modern, lightweight,
 
 ## 🛠️ Tech Stack
 - **Core**: Pure C++ (C++17)
-- **Platform API**: Windows API (`<windows.h>`), with future Linux support (`fork`, `exec`)
-- **JSON Parser**: [nlohmann/json](https://github.com/nlohmann/json)
+- **Architecture**: Interface-Driven Development (Pure virtual interfaces `.hpp`).
+- **Platform API**: Windows API (`<windows.h>`), with future Linux support (`fork`, `exec`).
 
 ## 📦 Project Structure
 ```text
 OI-Core/
 ├── CMakeLists.txt      # Build system
-├── config/             # Configuration files
-│   └── languages.json  # Compiler commands and flags
-├── include/            # Header files
-├── src/                # Source files
-│   └── main.cpp        # Entry point
+├── include/            # Core Abstract Interfaces (For frontend & 2nd-dev)
+│   ├── common/         # Shared data structures (Enums, Result structs)
+│   └── backend/        # Pure virtual interfaces (IBackend, ISandbox, ICompiler)
+├── src/                # Implementation details
+│   ├── core/           # Business logic implementations
+│   └── platform/       # OS-specific system calls (e.g., Windows Sandbox)
 └── tests/              # Test cases
 ```
 
 ## 🚀 Quick Start
 *(Note: Make sure you have CMake and a C++ compiler installed)*
+
 ```bash
 # Clone the repository
 git clone https://github.com/whdxh/OI-Core.git
@@ -50,7 +52,4 @@ make # Or use cmake --build . on Windows
 ```
 
 ## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
-## 🙏 Acknowledgements
-Special thanks to [nlohmann](https://github.com/nlohmann) for providing the excellent json.hpp library.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
